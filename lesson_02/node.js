@@ -7,4 +7,6 @@ const obj = {}
 
 let a = 20;
 let b =30;
-let str = 'str';
+let str = 'str doisfjodslf,sd';
+
+const biool = true;
