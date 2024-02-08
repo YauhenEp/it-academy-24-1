@@ -1,6 +1,8 @@
 const fse =  require('fs-extra');
 
-//fse.ensureFileSync('file.txt');
+fse.ensureFileSync('file.txt');
+
+fse.ensureDir('./dir1')
 
 var a;
 let b;
