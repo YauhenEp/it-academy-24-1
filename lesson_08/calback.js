@@ -70,27 +70,20 @@ const fse = require('fs-extra')
 //         console.log(err)
 //     })
 
-// async function getFolders() {
-//     await fse.ensureDir("folder1");
-//
-//     await fse.ensureFile('folder1/file.txt');
-//
-//     await fse.ensureDir("folder2");
-//
-//     await fse.move('folder1/file.txt', 'folder2/file.txt');
-//
-//     await fse.ensureDir("folder3");
-//
-//     await fse.copy('folder2/file.txt', 'folder3/file.txt')
-//
-//     await fse.remove("folder2/file.txt");
-//     await fse.remove("folder3/file.txt");
-//
-//     await fse.remove("folder1");
-//     await fse.remove("folder2");
-//     await fse.remove("folder3");
-//     return 4
-// }
+async function getFolders() {
+    await fse.ensureDir("folder1");
+    await fse.ensureFile('folder1/file.txt');
+    await fse.ensureDir("folder2");
+    await fse.move('folder1/file.txt', 'folder2/file.txt');
+    await fse.ensureDir("folder3");
+    await fse.copy('folder2/file.txt', 'folder3/file.txt')
+    await fse.remove("folder2/file.txt");
+    await fse.remove("folder3/file.txt");
+    await fse.remove("folder1");
+    await fse.remove("folder2");
+    await fse.remove("folder3");
+    return 4
+}
 //
 // async function print() {
 //     console.log(await getFolders());
