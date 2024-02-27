@@ -20,6 +20,8 @@ jobs:
         with:
           node-version: 18.15.0
       - name: Dependencies
+        cd: lesson_13
         run: npm i
       - name: Run tests
-        run: npn test
+        cd: lesson_13
+        run: npm test
