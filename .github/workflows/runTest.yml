@@ -22,7 +22,7 @@ jobs:
       - name: Folder
         run: cd ./lesson_13
       - name: Dependencies
-        working-directory: ./lesson_13tpekmnfn
+        working-directory: ./lesson_13
         run: npm i
       - name: Run tests
         working-directory: ./lesson_13
