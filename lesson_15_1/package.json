@@ -1,0 +1,16 @@
+{
+  "name": "lesson_15_1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test/test.spec.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.7.0",
+    "jest-html-reporters": "^3.1.7"
+  }
+}
