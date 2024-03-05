@@ -1,0 +1,19 @@
+{
+    "bail": 0,
+    "color": true,
+    "delay": false,
+    "diff": true,
+    "exit": false,
+    "extension": ["js", "cjs", "mjs"],
+    "parallel": true,
+    "jobs": 2,
+    "recursive": false,
+    "reporter": "mochawesome",
+    "require": "mochawesome/register",
+    "retries": 0,
+    "slow": 75,
+    "sort": false,
+    "spec": ["test/**/*.spec.js"],
+    "timeout": 5000,
+    "ui": "bdd"
+}
