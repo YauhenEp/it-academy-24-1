@@ -13,7 +13,7 @@
       "type": "string"
     },
     "completed": {
-      "type": "boolean"
+      "type": "number"
     }
   },
   "required": [
@@ -21,6 +21,7 @@
     "title",
     "dueDate",
     "completed",
-    "name"
+    "name",
+    "requiared"
   ]
 }

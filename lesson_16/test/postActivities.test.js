@@ -25,8 +25,6 @@ describe.only('API POST tests', function () {
     })
 
     test('POST /api/v1/Activities should be valid jsonschema', async () => {
-        const validationResult = await validator.validate(result.data, postActivitiesJsonSchema);
-        // console.log(validationResult)
-        expect(validationResult.valid).toEqual(true)
+        expect(result).toBeValidSchema(postActivitiesJsonSchema)
     })
 })
