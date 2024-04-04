@@ -1,11 +1,17 @@
 exports.config = {
     runner: 'local',
     specs: [
-        './test/**/*.js'
+        // './test/**/*.js',
+        './bbcTest/**/*.e2e.js'
     ],
     exclude: [
-        // 'path/to/excluded/files'
+        './test/**/onliner.e2e.js'
     ],
+    suite: {
+      bbcSuite: [
+          './bbcTest/*.e2e.js'
+      ]
+    },
     maxInstances: 10,
     capabilities: [{
         browserName: 'chrome',

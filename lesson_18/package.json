@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "wdio": "wdio run ./wdio.conf.js"
+    "yaundex:test": "npm run clear-folders && wdio run ./wdio.conf.js && npm run allure-open",
+    "bbc:test": "npm run clear-folders && wdio wdio.conf.js && npx allure generate",
+    "allure-open": "npx allure generate && npx allure open",
+    "clear-folders": "rimraf \"allure-report\" \"allure-results\""
   },
   "keywords": [],
   "author": "",
@@ -17,5 +19,9 @@
     "@wdio/mocha-framework": "^8.35.0",
     "@wdio/spec-reporter": "^8.32.4",
     "@wdio/visual-service": "^4.0.2"
+  },
+  "dependencies": {
+    "allure-commandline": "^2.27.0",
+    "rimraf": "^5.0.5"
   }
 }
