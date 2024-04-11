@@ -28,14 +28,12 @@ test.describe('BBC test', async function () {
     });
 
     test('should go to africa page', async ({page}) => {
-        await mainPage.navigate('https://www.bbc.com/');
         await header.openLeftNavMenu();
         await leftNaveMenu.goToPageByLeftNavMenu('News', 'World', 'Africa');
         await expect(await page.url()).toContain('/africa');
     });
 
     test('should go to africa page page 2', async ({page}) => {
-        await mainPage.navigate('https://www.bbc.com/');
         await header.openLeftNavMenu();
         await leftNaveMenu.goToPageByLeftNavMenu('News', 'World', 'Africa');
         await expect(await page.url()).toContain('/africa');

@@ -10,8 +10,9 @@ class Frame extends Base {
     }
 
     async acceptCookies() {
-        await this.page.waitForTimeout(3000)
-        const frame = await this.page.frame({ url: /.*cdn.privacy-mgmt.com*/ })
+        const iframeElement = await this.page.locator('iframe#sp_message_iframe_1091681').elementHandle()
+        const frame = await iframeElement.contentFrame();
+        await frame.waitForURL(new RegExp('.*cdn.privacy-mgmt.com*', 'i'));
         const acceptButton = await frame.locator(this.acceptCookiesButton);
         await acceptButton.click();
     }

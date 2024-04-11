@@ -38,7 +38,12 @@ exports.config = {
     connectionRetryCount: 3,
     services: ['visual'],
     framework: 'mocha',
-    reporters: ['spec',['allure', {outputDir: 'allure-results'}]],
+    reporters: ['spec',
+        [
+            'allure',
+            { outputDir: 'allure-results' }
+        ]
+    ],
     mochaOpts: {
         ui: 'bdd',
         timeout: 60000

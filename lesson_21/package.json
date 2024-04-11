@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "cypress:ui": "npx cypress open"
+  },
+  "dependencies": {
+    "cypress": "^13.7.2",
+    "cypress-iframe": "^1.0.1"
+  }
+}

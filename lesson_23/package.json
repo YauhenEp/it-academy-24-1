@@ -1,0 +1,26 @@
+{
+  "name": "lesson_23",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "wdio": "npm run clear-folders && wdio run ./wdio.conf.js && npx allure generate",
+    "clear-folders": "rimraf \"allure-report\" \"allure-results\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@wdio/allure-reporter": "^8.34.0",
+    "@wdio/cli": "^8.35.1",
+    "@wdio/cucumber-framework": "^8.35.0",
+    "@wdio/local-runner": "^8.35.1",
+    "@wdio/spec-reporter": "^8.32.4",
+    "@wdio/visual-service": "^4.1.0",
+    "wdio-wait-for": "^3.0.11"
+  },
+  "dependencies": {
+    "allure-commandline": "^2.28.0"
+  }
+}
