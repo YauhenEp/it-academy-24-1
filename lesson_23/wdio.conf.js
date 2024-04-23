@@ -283,7 +283,7 @@ exports.config = {
      * @param {object}             context          Cucumber World object
      */
     afterStep: async function (step, scenario, result, context) {
-        if(result) {
+        if(result.error) {
             await browser.takeScreenshot();
             const url = await browser.getUrl();
             await allureReporter.addDescription('Error url is - ', url)
