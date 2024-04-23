@@ -1,3 +1,13 @@
+const allureReporter = require('@wdio/allure-reporter')
+const yargs = require('yargs/yargs');
+const { hideBin } = require('yargs/helpers');
+
+const argv = yargs(hideBin(process.argv)).argv;
+
+const tags = argv.TAG || '';
+console.log('argv --- ', argv)
+console.log('tags --- ', tags)
+
 exports.config = {
     //
     // ====================
@@ -140,14 +150,15 @@ exports.config = {
         [
             'allure', {
                 outputDir: 'allure-results',
-                useCucumberStepReporter: true
+                useCucumberStepReporter: true,
+                disableWebdriverStepsReporting: true,
             }]
     ],
 
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
-        require: ['./step-definitions/*.js'],
+        require: ['./step-definitions/*.js', './utils/parameter-types.js', './utils/hooks.js'],
         // <boolean> show full backtrace for errors
         backtrace: false,
         // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
@@ -165,7 +176,7 @@ exports.config = {
         // <boolean> fail if there are any undefined or pending steps
         strict: false,
         // <string> (expression) only execute the features or scenarios with tags matching the expression
-        tagExpression: '',
+        tagExpression: tags,
         // <number> timeout for step definitions
         timeout: 60000,
         // <boolean> Enable this config to treat undefined definitions as warnings.
@@ -271,8 +282,13 @@ exports.config = {
      * @param {number}             result.duration  duration of scenario in milliseconds
      * @param {object}             context          Cucumber World object
      */
-    // afterStep: function (step, scenario, result, context) {
-    // },
+    afterStep: async function (step, scenario, result, context) {
+        if(result) {
+            await browser.takeScreenshot();
+            const url = await browser.getUrl();
+            await allureReporter.addDescription('Error url is - ', url)
+        }
+    },
     /**
      *
      * Runs after a Cucumber Scenario.
@@ -283,8 +299,8 @@ exports.config = {
      * @param {number}                 result.duration  duration of scenario in milliseconds
      * @param {object}                 context          Cucumber World object
      */
-    // afterScenario: function (world, result, context) {
-    // },
+        // afterScenario: function (world, result, context) {
+        // },
     /**
      *
      * Runs after a Cucumber Feature.
