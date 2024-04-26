@@ -1,4 +1,6 @@
-class Base {
+const BaseElements = require('../helpers/baseElements')
+
+class Base extends BaseElements {
     async navigate(url) {
         await browser.url(url)
     }
@@ -10,3 +12,4 @@ class Base {
 }
 
 module.exports = Base;
+const base = new Base();

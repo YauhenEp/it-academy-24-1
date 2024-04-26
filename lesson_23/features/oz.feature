@@ -15,4 +15,3 @@ Feature: OZ .by training tests
       | website               | title                                                                                          |
       | https://cucumber.io   | BDD Testing & Collaboration Tools for Teams \| Cucumber                                        |
       | https://webdriver.io/ | WebdriverIO · Next-gen browser and mobile automation test framework for Node.js \| WebdriverIO |
-
